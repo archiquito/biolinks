@@ -17,7 +17,8 @@ class LinkFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'url' => fake()->unique()->url(),
+            'title' => fake()->sentence(),
         ];
     }
 }

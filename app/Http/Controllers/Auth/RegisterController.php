@@ -20,7 +20,7 @@ class RegisterController extends Controller
             // Registration successful
             return redirect()->back()->with('message', 'Falha ao registrar usuário.')->withInput();
         }
-         return redirect()->route('home')->with('success', 'Usuário registrado com sucesso!');
+         return redirect()->route('dashboard')->with('success', 'Usuário registrado com sucesso!');
         // Registration failed
        
     }
