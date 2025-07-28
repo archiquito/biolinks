@@ -14,10 +14,12 @@ class LinkSeeder extends Seeder
      */
     public function run(): void
     {
+        $num = 0;
        User::all()
             ->each(function ($user) {
-                Link::factory(5)->create([
+               Link::factory()->resetPosition()->count(5)->create([
                     'user_id' => $user->id,
+                
                 ]);
             });
     }

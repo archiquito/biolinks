@@ -47,8 +47,4 @@ class UpdateLinkRequest extends FormRequest
         }
         return $this->validated();
     }
-    public function position()
-    {
-        return $this->position;
-    }
 }

@@ -14,11 +14,32 @@ class LinkFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+     /**
+     * Propriedade estática para armazenar o valor do contador de posição.
+     *
+     * @var int
+     */
+    protected static int $positionCounter = 0;
+
     public function definition(): array
     {
+      self::$positionCounter++;
         return [
             'url' => fake()->unique()->url(),
             'title' => fake()->sentence(),
+            'position' => self::$positionCounter,
         ];
+    }
+
+    /**
+     * Reseta o contador de posição para 0.
+     *
+     * @return static
+     */
+    public function resetPosition(): static
+    {
+        self::$positionCounter = 0;
+        return $this;
     }
 }

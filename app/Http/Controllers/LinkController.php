@@ -23,11 +23,11 @@ class LinkController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLinkRequest $request)
+    public function store(StoreLinkRequest $request, Link $link)
     {
         /** @var User $user */
         $user = Auth::user();
-        $user->links()->create($request->validated());
+        $link->createLink($request->validated(), $user->id);
         return redirect()->route('link.create')->with('message', 'Link criado com sucesso!');
     }
 
@@ -45,7 +45,6 @@ class LinkController extends Controller
     public function update(UpdateLinkRequest $request, Link $link)
     {
 
-
         $link->update($request->updateLink());
 
         return redirect()->route('dashboard')->with('message', 'Link atualizado com sucesso!');
@@ -62,21 +61,21 @@ class LinkController extends Controller
     /**
      * Update the position of the specified resource.
      */
-    public function updatePositionDown(UpdateLinkRequest $request, Link $link)
+    public function updatePosition(UpdateLinkRequest $request, Link $link)
     {
         /** @var User $user */
         $user = Auth::user();
-        
-        $position = $request->position();
-        dd($position, $link->position);
-        // if ($position === 'up' && $link->position > 0) {
-        //     $link->increment('position');
-        //     $link->update($request->updateLink());
-        // } elseif ($position === 'down' && $link->position < $user->links->count() - 1) {
-        //     $link->decrement('position');
-        //     $link->update($request->updateLink());
-        // }
 
-        // return redirect()->route('dashboard')->with('message', 'Posição do link atualizada com sucesso!');
+        $position = $request->position;
+
+        if ($position === 'up') {
+
+            $link->moveUp();
+        } elseif ($position === 'down') {
+
+            $link->moveDown();
+        }
+
+        return redirect()->route('dashboard')->with('message', 'Posição do link atualizada com sucesso!');
     }
 }
