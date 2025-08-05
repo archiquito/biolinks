@@ -17,12 +17,9 @@ class RegisterController extends Controller
         $user = $request->registerCreate();
 
         if (!$user) {
-            // Registration successful
+
             return redirect()->back()->with('message', 'Falha ao registrar usuário.')->withInput();
         }
-         return redirect()->route('dashboard')->with('success', 'Usuário registrado com sucesso!');
-        // Registration failed
-       
+        return redirect()->route('dashboard')->with('success', 'Usuário registrado com sucesso!');
     }
 }
-

@@ -1,0 +1,1 @@
+@svg('lucide-home', $attributes->getAttributes())

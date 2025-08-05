@@ -19,7 +19,6 @@ class LoginController extends Controller
 
         if ($user) {
             Auth::login($user);
-            // Redirect to the intended page or a default page
             return redirect()->to($request->redirect_to ?? route('dashboard'));
         }
         return redirect()->back()->with('message', 'Usuário ou senha inválidos!')->withInput();

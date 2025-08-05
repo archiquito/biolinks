@@ -1,29 +1,31 @@
-<div>
-    <h1>Editar um link</h1>
-    @if(session('message'))
-    <div class="alert alert-danger">
-        {{ session('message') }}
-    </div>
-    @endif
-    <form method="POST" action="{{ route('link.update', $link->id) }}">
-        @csrf
-        @method('put')
-        <div>
-            <label for="url">URL</label>
-            <input type="text" id="url" name="url" value="{{ old('url', $link->url) }}" />
-            <p>@error('url') {{ $message }} @enderror</p>
-        </div>
-        <div>
-            <label for="title">Título</label>
-            <input type="text" id="title" name="title" value="{{ old('title', $link->title) }}" />
-            <p>@error('title') {{ $message }} @enderror</p>
-        </div>
-        <div>
-            <label for="description">Descrição</label>
-            <textarea id="description" name="description">{{ old('description', $link->description) }}</textarea>
-            <p>@error('description') {{ $message }} @enderror</p>
-        </div>
-        <button type="submit">Atualizar Link</button>
-        <a href="{{ route('dashboard') }}">Voltar ao Dashboard</a>
-    </form>
-</div>
+<x-layout.app>
+     <x-container class="h-screen">
+       
+        <x-card title="Editar link">
+            <x-alert />
+            <x-form :route="route('link.update', $link->id)" put id="linkupdate-form">
+                <x-input class="input text-gray-800" type="text" id="url" name="url" value="{{ old('url', $link->url) }}">
+                    <x-slot:label>
+                        <label class="fieldset-legend text-slate-50" for="email">URL:</label>
+                    </x-slot:label>
+                </x-input>
+
+                <x-input class="input text-gray-800" type="text" id="title" name="title" value="{{ old('title', $link->title) }}">
+                    <x-slot:label>
+                        <label class="fieldset-legend text-slate-50" for="email">Título:</label>
+                    </x-slot:label>
+                </x-input>
+                <x-input class="input text-gray-800" type="text" id="description" name="description" value="{{ old('description', $link->description) }}">
+                    <x-slot:label>
+                        <label class="fieldset-legend text-slate-50" for="email">Descrição:</label>
+                    </x-slot:label>
+                </x-input>
+            </x-form>
+            <x-slot:actions>
+                <a class="btn btn-soft btn-neutral" href="{{ route('dashboard') }}">Voltar ao Dashboard</a>
+                <x-button class="btn btn-primary" type="submit" form="linkupdate-form">Editar Link</x-button>
+            </x-slot:actions>
+
+        </x-card>
+    </x-container>
+</x-layout.app>

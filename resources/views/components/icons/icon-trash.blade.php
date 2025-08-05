@@ -1,0 +1,1 @@
+@svg('lucide-trash', $attributes->getAttributes())

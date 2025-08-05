@@ -1,0 +1,1 @@
+@svg('lucide-edit', $attributes->getAttributes())

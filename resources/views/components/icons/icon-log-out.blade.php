@@ -1,0 +1,1 @@
+@svg('lucide-log-out', $attributes->getAttributes())

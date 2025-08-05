@@ -1,0 +1,1 @@
+@svg('lucide-plus', $attributes->getAttributes())

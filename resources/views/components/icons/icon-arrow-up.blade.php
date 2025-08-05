@@ -1,0 +1,1 @@
+@svg('lucide-arrow-up-circle', $attributes->getAttributes())

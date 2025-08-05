@@ -41,6 +41,7 @@ class Link extends Model
 
     private function move($to)
     {
+
         $currentPos = $this->user->links()->where('position', $this->position)->first();
         $nextPos = $this->user->links()->where('position', $this->position + $to)->first();
         if ($to === +1) {

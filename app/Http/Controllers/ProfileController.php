@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
@@ -14,9 +14,20 @@ class ProfileController extends Controller
             'user' => Auth::user(),
         ]);
     }
-    public function update(Request $request, User $user)
+    public function update(ProfileRequest $request, User $user)
     {
-        $user->updateUser($request->all());
-        return redirect()->route('profile')->with('message', 'Perfil atualizado com sucesso!');
+        $data = $request->validated();
+        $file = $request->file('photo');
+        if ($file) {
+            $fileOriginalName = $file->getClientOriginalName();
+            $fileExtension = $file->getClientOriginalExtension();
+            $filename = pathinfo($fileOriginalName, PATHINFO_FILENAME). '_' . date('YmdHis') . '.' . $fileExtension;
+            $file->storeAs('photos', $filename, 'public');
+            $data['photo'] = $filename;
+        }
+        /** @var User $user */
+        $user = Auth::user();
+        $user->updateUser($data);
+        return redirect()->route('profile.index')->with('message', 'Perfil atualizado com sucesso!');
     }
 }

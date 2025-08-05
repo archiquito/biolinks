@@ -1,0 +1,1 @@
+@svg('lucide-user', $attributes->getAttributes())

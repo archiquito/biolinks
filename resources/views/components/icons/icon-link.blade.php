@@ -1,0 +1,1 @@
+@svg('lucide-link', $attributes->getAttributes())
