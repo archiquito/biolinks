@@ -55,7 +55,7 @@ DB_PORT=3306
 DB_DATABASE=biolinks_db
 DB_USERNAME=root
 DB_PASSWORD=
-
+ ```
 **4. Gere a Chave da Aplicação:**
 
 ```bash
