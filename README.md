@@ -33,19 +33,19 @@ Siga os passos abaixo para configurar o projeto em seu ambiente local:
 ```bash
 git clone [URL_DO_SEU_REPOSITORIO]
 cd biolinks
-
+ ```
 **2. Instale as Dependências do PHP:**
 
 Use o Composer para instalar as dependências do Laravel:
 
 ```bash
 composer install
-
+ ```
 **3. Configure o Ambiente:**
 
 ```bash
 cp .env.example .env
-
+ ```
 Abra o arquivo .env e preencha as seguintes variáveis:
 
 ```bash
@@ -60,19 +60,19 @@ DB_PASSWORD=
 
 ```bash
 php artisan key:generate
-
+ ```
 **5. Instale as Dependências do JavaScript:**
 Use o npm para instalar as dependências de front-end:
 
 ```bash
 npm install
-
+ ```
 **6. Execute as Migrações do Banco de Dados:**
 Isso criará as tabelas necessárias no seu banco de dados.
 
 ```bash
 php artisan migrate
-
+ ```
 ---
 
 ## ▶️ Como Rodar a Aplicação
@@ -81,13 +81,13 @@ Para iniciar o servidor do Laravel e o servidor do Vite (para o front-end) simul
 
 ```bash
 npm run start
-
+ ```
 **Acessando a Aplicação**
 Depois de rodar o comando acima, a aplicação estará disponível em seu navegador nos seguintes endereços:
 
-- **Frontend (Página Principal):** http://127.0.0.1:8000
+- **Frontend (Página Principal):** http://localhost:8000
 
-- **Dashboard (Seção de Links):** http://127.0.0.1:8000/dashboard
+- **Dashboard (Seção de Links):** http://localhost:8000/dashboard
 
 ---
 
