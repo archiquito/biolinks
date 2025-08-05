@@ -5,7 +5,7 @@ O Biolinks é uma aplicação web simples e poderosa para gerenciar e compartilh
 ## 🚀 Funcionalidades
 
 - **Gerenciamento de Links:** Adicione, edite, reorganize e exclua seus links de forma fácil e intuitiva.
-- **Página de Perfil Personalizada:** Cada usuário tem uma URL única (`biolinks.test/seuhandler`) que exibe todos os seus links.
+- **Página de Perfil Personalizada:** Cada usuário tem uma URL única (`biolinks.test/@seuhandler`) que exibe todos os seus links.
 - **Autenticação de Usuário:** Sistema de login e registro para gerenciar seus próprios links com segurança.
 - **Interface Amigável:** Desenvolvido com Tailwind CSS e DaisyUI para uma experiência de usuário limpa e moderna.
 
@@ -16,6 +16,7 @@ O Biolinks é uma aplicação web simples e poderosa para gerenciar e compartilh
 Antes de começar, certifique-se de ter os seguintes softwares instalados em sua máquina:
 
 - **PHP** (versão 8.1 ou superior)
+- **Laravel** (versão 12)
 - **Composer** (Gerenciador de dependências PHP)
 - **Node.js** (versão 16 ou superior)
 - **npm** (Gerenciador de pacotes do Node.js)
