@@ -77,7 +77,7 @@ php artisan migrate
 
 ## ▶️ Como Rodar a Aplicação
 
-Para iniciar o servidor do Laravel e o servidor do Vite (para o front-end) simultaneamente, use o script npm run start que configuramos.
+Para iniciar o servidor do Laravel e o servidor do Vite (para o front-end) simultaneamente, use o script npm run start que foi configurado.
 
 ```bash
 npm run start
