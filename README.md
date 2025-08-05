@@ -1,61 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Biolinks - Gerenciador de Links para Perfis
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O Biolinks é uma aplicação web simples e poderosa para gerenciar e compartilhar seus links em um único lugar. Crie sua página de perfil personalizada para centralizar todos os seus links importantes, como redes sociais, portfólio, projetos e muito mais.
 
-## About Laravel
+## 🚀 Funcionalidades
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Gerenciamento de Links:** Adicione, edite, reorganize e exclua seus links de forma fácil e intuitiva.
+- **Página de Perfil Personalizada:** Cada usuário tem uma URL única (`biolinks.test/seuhandler`) que exibe todos os seus links.
+- **Autenticação de Usuário:** Sistema de login e registro para gerenciar seus próprios links com segurança.
+- **Interface Amigável:** Desenvolvido com Tailwind CSS e DaisyUI para uma experiência de usuário limpa e moderna.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Requisitos de Instalação
 
-## Learning Laravel
+Antes de começar, certifique-se de ter os seguintes softwares instalados em sua máquina:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **PHP** (versão 8.1 ou superior)
+- **Composer** (Gerenciador de dependências PHP)
+- **Node.js** (versão 16 ou superior)
+- **npm** (Gerenciador de pacotes do Node.js)
+- **Um banco de dados** (MySQL, PostgreSQL, SQLite, etc.)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Guia de Instalação
 
-## Laravel Sponsors
+Siga os passos abaixo para configurar o projeto em seu ambiente local:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**1. Clone o Repositório:**
 
-### Premium Partners
+```bash
+git clone [URL_DO_SEU_REPOSITORIO]
+cd biolinks
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**2. Instale as Dependências do PHP:**
 
-## Contributing
+Use o Composer para instalar as dependências do Laravel:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
 
-## Code of Conduct
+**3. Configure o Ambiente:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
 
-## Security Vulnerabilities
+Abra o arquivo .env e preencha as seguintes variáveis:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=biolinks_db
+DB_USERNAME=root
+DB_PASSWORD=
 
-## License
+**4. Gere a Chave da Aplicação:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+
+**5. Instale as Dependências do JavaScript:**
+Use o npm para instalar as dependências de front-end:
+
+```bash
+npm install
+
+**6. Execute as Migrações do Banco de Dados:**
+Isso criará as tabelas necessárias no seu banco de dados.
+
+```bash
+php artisan migrate
+
+---
+
+## ▶️ Como Rodar a Aplicação
+
+Para iniciar o servidor do Laravel e o servidor do Vite (para o front-end) simultaneamente, use o script npm run start que configuramos.
+
+```bash
+npm run start
+
+**Acessando a Aplicação**
+Depois de rodar o comando acima, a aplicação estará disponível em seu navegador nos seguintes endereços:
+
+- **Frontend (Página Principal):** http://127.0.0.1:8000
+
+- **Dashboard (Seção de Links):** http://127.0.0.1:8000/dashboard
+
+---
+
+**Agora você pode se registrar e começar a gerenciar seus links!**
